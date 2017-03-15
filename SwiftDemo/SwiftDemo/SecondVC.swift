@@ -27,14 +27,14 @@ class SecondVC: BaseTableVC {
     
     override func getPageList(flag: String) {
         HttpServiceUtil.list(pageNumber: self.pageNumber, pageSize: self.pageSize , success: { (res) in
+            
             let dic:NSDictionary = res as! NSDictionary
             //let data:NSMutableArray = (dic.object(forKey: "data") as! NSArray).mutableCopy() as! NSMutableArray
-            let data:NSMutableArray = ProjectConstant.arrayToMutableArray(array: dic.object(forKey: "data")!)
-            self.refreshTable(dataSource: data, flag: flag)
+            //let data:NSMutableArray = ProjectConstant.arrayToMutableArray(array: dic.object(forKey: "data")!)
+            self.refreshTable(dataSource: dic.object(forKey: "data") as! Array, flag: flag)
         }) { (err) in
             
         }
-       
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +50,13 @@ class SecondVC: BaseTableVC {
         }
         cell?.contentView.backgroundColor = UIColor.red
         let dic:NSDictionary = self.tableDataSource![indexPath.row] as! NSDictionary;
-        cell?.label.text = dic.object(forKey: "siteName") as! String?
+        cell?.label.text = dic.object(forKey: "siteName") as? String
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dic:NSDictionary = self.tableDataSource![indexPath.row] as! NSDictionary;
-        titleName = dic.object(forKey: "siteName") as! String?
+        titleName = dic.object(forKey: "siteName") as? String
         self.performSegue(withIdentifier: "toto", sender: self)
     }
     

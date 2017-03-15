@@ -13,7 +13,7 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     // MARK: 公共表格View，继承是必须连接到这里
     @IBOutlet public weak var tableView: UITableView!
     
-    public var tableDataSource:NSMutableArray?
+    public var tableDataSource:Array<Any>?
     public var pageSize:Int!
     public var pageNumber:Int!
     let header = MJRefreshNormalHeader()
@@ -35,10 +35,10 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         self.refreshTable(dataSource: [], flag: flag)
     }
     
-    public func refreshTable(dataSource:NSMutableArray,flag:String) {
+    public func refreshTable(dataSource:Array<Any>,flag:String) {
         if flag == GET_PAGE_FLAG_NEW {
             if dataSource.count > 0 {
-                self.tableDataSource = dataSource
+                self.tableDataSource = dataSource 
                 self.tableView?.reloadData()
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
@@ -48,7 +48,7 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
             }
         } else {
             if dataSource.count > 0 {
-                self.tableDataSource?.addObjects(from: [dataSource])
+                self.tableDataSource?.append(dataSource)
                 self.tableView?.reloadData()
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
@@ -73,7 +73,7 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     }
     
     private func getNewPageList() {
-        self.tableDataSource?.removeAllObjects()
+        self.tableDataSource?.removeAll()
         self.pageNumber = 1
         self.getPageList(flag: GET_PAGE_FLAG_NEW)
     }
@@ -84,7 +84,8 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableDataSource != nil ?self.tableDataSource!.count:0
+        //return self.tableDataSource != nil ?self.tableDataSource!.count:0
+        return self.tableDataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

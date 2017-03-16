@@ -37,27 +37,29 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     
     public func refreshTable(dataSource:Array<Any>,flag:String) {
         if flag == GET_PAGE_FLAG_NEW {
-            if dataSource.count > 0 {
-                self.tableDataSource = dataSource 
-                self.tableView?.reloadData()
+            if dataSource.isEmpty {
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
             } else {
+                self.tableDataSource = dataSource
+                self.tableView?.reloadData()
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
             }
         } else {
-            if dataSource.count > 0 {
-                self.tableDataSource?.append(dataSource)
-                self.tableView?.reloadData()
+            if dataSource.isEmpty {
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
             } else {
+                self.tableDataSource = self.tableDataSource!+dataSource
+                self.tableDataSource?.append(dataSource)
+                self.tableView?.reloadData()
                 self.tableView?.mj_header.endRefreshing()
                 self.tableView?.mj_footer.endRefreshing()
             }
         }
     }
+    
     
     public func addHeader() {
         self.tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock:{
@@ -97,3 +99,4 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         super.didReceiveMemoryWarning()
     }
 }
+

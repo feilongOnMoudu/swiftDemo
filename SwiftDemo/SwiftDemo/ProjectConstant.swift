@@ -17,6 +17,14 @@ class ProjectConstant: NSObject {
         return (array as! NSArray).mutableCopy() as! NSMutableArray
     }
     
+    public class func getAnyObject_valueToDictionary(responseObject:Array<Any>,index:Int)->(Dictionary<AnyHashable, AnyObject>) {
+        return responseObject[index] as! Dictionary<AnyHashable, AnyObject>
+    }
+    
+    public class func getAnyObject_valueToArray(responseObject:Any,key:String)->(Array<Any>) {
+        return (responseObject as! Dictionary<AnyHashable,AnyObject>)[key] as! Array
+    }
+    
     public class func getVC(vcName:String) ->(UIViewController) {
         return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: vcName)
     }

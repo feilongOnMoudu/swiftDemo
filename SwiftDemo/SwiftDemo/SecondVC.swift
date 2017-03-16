@@ -11,9 +11,9 @@ import MJRefresh
 
 
 class SecondVC: BaseTableVC {
-
+    
     var titleName: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.leftBack(on: true)
@@ -27,16 +27,12 @@ class SecondVC: BaseTableVC {
     
     override func getPageList(flag: String) {
         HttpServiceUtil.list(pageNumber: self.pageNumber, pageSize: self.pageSize , success: { (res) in
-            
-            let dic:NSDictionary = res as! NSDictionary
-            //let data:NSMutableArray = (dic.object(forKey: "data") as! NSArray).mutableCopy() as! NSMutableArray
-            //let data:NSMutableArray = ProjectConstant.arrayToMutableArray(array: dic.object(forKey: "data")!)
-            self.refreshTable(dataSource: dic.object(forKey: "data") as! Array, flag: flag)
+            self.refreshTable(dataSource: ProjectConstant.getAnyObject_valueToArray(responseObject:res,key:"data"), flag: flag)
         }) { (err) in
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,11 +42,11 @@ class SecondVC: BaseTableVC {
         let cellId:String = "SecondCell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? SecondCell
         if cell == nil {
-           cell = SecondCell(style: UITableViewCellStyle.default, reuseIdentifier: cellId) as SecondCell
+            cell = SecondCell(style: UITableViewCellStyle.default, reuseIdentifier: cellId) as SecondCell
         }
         cell?.contentView.backgroundColor = UIColor.red
-        let dic:NSDictionary = self.tableDataSource![indexPath.row] as! NSDictionary;
-        cell?.label.text = dic.object(forKey: "siteName") as? String
+        let dic = ProjectConstant.getAnyObject_valueToDictionary(responseObject: self.tableDataSource!, index: indexPath.row)
+        cell?.label.text = dic["siteName"] as? String
         return cell!
     }
     
@@ -61,13 +57,13 @@ class SecondVC: BaseTableVC {
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toto" {
             segue.destination.setValue(titleName, forKey: "title")
         }
     }
- 
-
+    
+    
 }

@@ -23,9 +23,7 @@ class FourthVC: BaseTableVC {
     
     override func getPageList(flag: String) {
         HttpServiceUtil.list1(pageNumber: self.pageNumber, pageSize: self.pageSize , success: { (res) in
-            let dic = res as! NSDictionary
-            //let data:NSMutableArray = ProjectConstant.arrayToMutableArray(array: dic.object(forKey: "data")!)
-            self.refreshTable(dataSource: dic.object(forKey: "data") as! Array, flag: flag)
+            self.refreshTable(dataSource: ProjectConstant.getAnyObject_valueToArray(responseObject:res,key:"data"), flag: flag)
         }) { (err) in
             
         }

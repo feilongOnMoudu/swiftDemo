@@ -28,6 +28,10 @@
 		51415C081E72752F008823EC /* icon_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51415C051E72752F008823EC /* icon_arrow_left@2x.png */; };
 		51415C091E72752F008823EC /* icon_arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51415C061E72752F008823EC /* icon_arrow_left@3x.png */; };
 		51415C0B1E727CE3008823EC /* BaseNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51415C0A1E727CE3008823EC /* BaseNavVC.swift */; };
+		514780DA1E7F71A100574B6F /* SecondModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514780D91E7F71A100574B6F /* SecondModel.swift */; };
+		514780DC1E7F725900574B6F /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514780DB1E7F725900574B6F /* SecondViewModel.swift */; };
+		514780DF1E7FC15F00574B6F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514780DE1E7FC15F00574B6F /* API.swift */; };
+		51522FA51E81146C00FD83CB /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51522FA41E81146C00FD83CB /* Observable+ObjectMapper.swift */; };
 		E8C0263C61BDD0A9E48035BA /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B943BF04A1664B57A1E91C /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		51415C051E72752F008823EC /* icon_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_arrow_left@2x.png"; sourceTree = "<group>"; };
 		51415C061E72752F008823EC /* icon_arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_arrow_left@3x.png"; sourceTree = "<group>"; };
 		51415C0A1E727CE3008823EC /* BaseNavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavVC.swift; sourceTree = "<group>"; };
+		514780D91E7F71A100574B6F /* SecondModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondModel.swift; sourceTree = "<group>"; };
+		514780DB1E7F725900574B6F /* SecondViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
+		514780DE1E7FC15F00574B6F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		51522FA41E81146C00FD83CB /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		8430BF7EA1A5459A310CA9CE /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		97FF4BC263F62D58D6887D2E /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +139,9 @@
 				51415BDE1E724241008823EC /* AppDelegate.swift */,
 				51415BE01E724241008823EC /* ViewController.swift */,
 				51415C021E7274DD008823EC /* SecondVC.swift */,
+				51522FA41E81146C00FD83CB /* Observable+ObjectMapper.swift */,
+				514780DB1E7F725900574B6F /* SecondViewModel.swift */,
+				514780D91E7F71A100574B6F /* SecondModel.swift */,
 				5122041D1E77BFAE00182C60 /* ThirdVC.swift */,
 				5122041F1E77C28A00182C60 /* FourthVC.swift */,
 				512204211E77C35B00182C60 /* FourthCell.swift */,
@@ -147,6 +158,7 @@
 				51415BE51E724241008823EC /* Assets.xcassets */,
 				51415BE71E724241008823EC /* LaunchScreen.storyboard */,
 				51415BEA1E724241008823EC /* Info.plist */,
+				514780DE1E7FC15F00574B6F /* API.swift */,
 			);
 			path = SwiftDemo;
 			sourceTree = "<group>";
@@ -229,6 +241,7 @@
 					51415BEE1E724241008823EC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = HRGZV788WD;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 51415BDA1E724241008823EC;
 					};
@@ -329,10 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514780DC1E7F725900574B6F /* SecondViewModel.swift in Sources */,
 				512204201E77C28A00182C60 /* FourthVC.swift in Sources */,
 				51140E991E76723200ED1C51 /* ProjectConstant.swift in Sources */,
 				51415C011E7243DF008823EC /* BaseTableVC.swift in Sources */,
+				51522FA51E81146C00FD83CB /* Observable+ObjectMapper.swift in Sources */,
+				514780DF1E7FC15F00574B6F /* API.swift in Sources */,
 				51415C031E7274DD008823EC /* SecondVC.swift in Sources */,
+				514780DA1E7F71A100574B6F /* SecondModel.swift in Sources */,
 				51415BE11E724241008823EC /* ViewController.swift in Sources */,
 				5122041E1E77BFAE00182C60 /* ThirdVC.swift in Sources */,
 				51415C0B1E727CE3008823EC /* BaseNavVC.swift in Sources */,

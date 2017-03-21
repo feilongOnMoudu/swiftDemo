@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Moya.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,10 +39,50 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Result.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxDataSources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>19BFD2E391214333B2CAB076C62458FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1B46EB29DA6D5DDA25627A79CF2030FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>29DD99664D189A7CA206368F493B1E0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +97,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE1B70C59C25429CC8BCA2BD3E73036B</key>
+		<key>BF534C058892FFE79ECFF2A3F1429D9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C328DC3CFF9C38326B26275A08B9BE8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA7E2A3B8CAC43CB0C369437200216A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9095639E81152ACA2D338B344A06723</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0AA2F9036E54E514ACDE84C6E56E3FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F29939A6E87BC1066775F4F48553A397</key>
 		<dict>
 			<key>primary</key>
 			<true/>

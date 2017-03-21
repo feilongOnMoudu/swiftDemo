@@ -10,7 +10,7 @@ import UIKit
 
 public let GET_PAGE_FLAG_NEW:String = "new"
 public let GET_PAGE_FLAG_NEXT:String = "next"
-public let CUSTOM_PAGE_SIZE:Int = 10
+public let CUSTOM_PAGE_SIZE:Int = 3
 
 class ProjectConstant: NSObject {
     public class func arrayToMutableArray(array:Any) ->(NSMutableArray) {

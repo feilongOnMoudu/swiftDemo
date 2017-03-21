@@ -9,6 +9,13 @@ target 'SwiftDemo' do
     use_frameworks!
     platform:ios, '8.0'
     pod 'MJRefresh'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxDataSources'
+    pod 'Moya'
+    pod 'Moya/RxSwift'
+    pod 'ObjectMapper'
+    pod 'SwiftyJSON'
     project 'SwiftDemo/SwiftDemo.xcodeproj'
 end
 

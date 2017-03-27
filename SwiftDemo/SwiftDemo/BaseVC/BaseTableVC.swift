@@ -26,7 +26,7 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         self.pageNumber = 1
         self.addHeader()
         self.addFooter()
-        self.tableView?.mj_header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
         self.tableView.tableFooterView = UIView.init()
         self.leftBack(on: true)
     }
@@ -38,38 +38,36 @@ class BaseTableVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     public func refreshTable(dataSource:Array<Any>,flag:String) {
         if flag == GET_PAGE_FLAG_NEW {
             if dataSource.isEmpty {
-                self.tableView?.mj_header.endRefreshing()
-                self.tableView?.mj_footer.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
             } else {
                 self.tableDataSource = dataSource
-                self.tableView?.reloadData()
-                self.tableView?.mj_header.endRefreshing()
-                self.tableView?.mj_footer.endRefreshing()
+                self.tableView.reloadData()
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
             }
         } else {
             if dataSource.isEmpty {
-                self.tableView?.mj_header.endRefreshing()
-                self.tableView?.mj_footer.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
             } else {
                 self.tableDataSource = self.tableDataSource!+dataSource
-                self.tableDataSource?.append(dataSource)
-                self.tableView?.reloadData()
-                self.tableView?.mj_header.endRefreshing()
-                self.tableView?.mj_footer.endRefreshing()
+                self.tableView.reloadData()
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
             }
         }
     }
     
-    
     public func addHeader() {
-        self.tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock:{
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock:{
             self.getNewPageList()
         })
-        self.tableView?.mj_header.isAutomaticallyChangeAlpha = true
+        self.tableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     
     public func addFooter() {
-        self.tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
             self.getNextPageList()
         })
     }

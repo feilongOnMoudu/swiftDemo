@@ -14,7 +14,6 @@ class SecondViewMode {
     let provider = RxMoyaProvider<API>()
     func getList(pageNumber:Int,pageSize:Int) -> Observable<[SecondModel]> {
         return provider.request(.List(pageNumber: pageNumber, pageSize: pageSize))
-            
-            .mapArray(SecondModel.self)
+                       .mapArray(SecondModel.self)
     }
 }

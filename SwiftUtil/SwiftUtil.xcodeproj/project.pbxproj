@@ -36,6 +36,7 @@
 		51140ECF1E76770100ED1C51 /* AFNetwokingUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetwokingUtil.m; sourceTree = "<group>"; };
 		51140ED21E7677E800ED1C51 /* SwiftUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftUtil.h; sourceTree = "<group>"; };
 		51140EDA1E76880000ED1C51 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "/Users/songfeilong/Desktop/SwiftDemo/Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<absolute>"; };
+		515CF1B81E8517690000B8C1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5CB7F6277A5B2E632C78F410 /* libPods-SwiftUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftUtil.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C806C66D554CCB6FCF399B /* Pods-SwiftUtil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUtil.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftUtil/Pods-SwiftUtil.debug.xcconfig"; sourceTree = "<group>"; };
 		8181DC3F8F67A5EEA76F2E49 /* Pods-SwiftUtil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUtil.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftUtil/Pods-SwiftUtil.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 			children = (
 				51140EDA1E76880000ED1C51 /* libAFNetworking.a */,
 				5CB7F6277A5B2E632C78F410 /* libPods-SwiftUtil.a */,
+				515CF1B81E8517690000B8C1 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 		51140EB61E76767400ED1C51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "宋飞龙";
 				TargetAttributes = {
@@ -157,6 +160,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 51140EB51E76767400ED1C51;
 			productRefGroup = 51140EBF1E76767400ED1C51 /* Products */;

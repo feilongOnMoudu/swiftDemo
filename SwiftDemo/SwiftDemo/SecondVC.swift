@@ -53,7 +53,11 @@ class SecondVC: BaseTableVC {
         
         viewModel.getList(pageNumber: self.pageNumber, pageSize: self.pageSize)
             .subscribe(onNext: { (mo:[SecondModel]) in
-                self.model = mo
+                if (self.model != nil && self.pageNumber != 1) {
+                    self.model = self.model! + mo
+                } else {
+                    self.model = mo
+                }
                 self.tableView.reloadData()
             }, onError: { (error) in
                 print(error)
@@ -70,12 +74,12 @@ class SecondVC: BaseTableVC {
 //        }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let models = model else {
-            return 0
-        }
-        return models.count
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        guard let models = model else {
+//            return 0
+//        }
+//        return models.count
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,10 +93,12 @@ class SecondVC: BaseTableVC {
             cell = SecondCell(style: UITableViewCellStyle.default, reuseIdentifier: cellId) as SecondCell
         }
         cell?.contentView.backgroundColor = UIColor.red
-        //let dic = ProjectConstant.getAnyObject_valueToDictionary(responseObject: self.tableDataSource!, index: indexPath.row)
-        let data = self.model?[indexPath.row]
         
-        cell?.label.text = data?.name
+        //let data = self.model?[indexPath.row]
+        //cell?.label.text = data?.name
+        
+        let dic = ProjectConstant.getAnyObject_valueToDictionary(responseObject: self.tableDataSource!, index: indexPath.row)
+        cell?.label.text = dic["siteName"] as? String
         return cell!
     }
     
